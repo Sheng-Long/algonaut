@@ -77,6 +77,11 @@ impl TxnBuilder {
         self
     }
 
+    pub fn asset_accept(mut self, txn: AssetAcceptTransaction) -> Self {
+        self.txn_type = Some(TransactionType::AssetAcceptTransaction(txn));
+        self
+    }
+
     pub fn genesis_id(mut self, genesis_id: String) -> Self {
         self.genesis_id = genesis_id;
         self
