@@ -324,6 +324,7 @@ impl Client {
         &self,
         rawtxn: &[u8],
     ) -> Result<TransactionResponse, ClientError> {
+        println!("{}", std::str::from_utf8(rawtxn).unwrap());
         let response = self
             .http_client
             .post(&format!("{}v2/transactions", self.url))
